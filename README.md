@@ -32,18 +32,18 @@
 - **操作反馈**：Toast通知系统提供即时反馈
 - **简洁管理**：表格展示所有密钥信息
 
-## 🚀 一键部署
+~~## 🚀 一键部署~~
 
-### 点击按钮，一键部署到CloudFlare Workers
+~~### 点击按钮，一键部署到CloudFlare Workers~~
 
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/rento666/KeyManagementSystem)
+~~[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/rento666/KeyManagementSystem)~~
 
-> 适用于新部署，已部署项目可直接更新JS代码
+~~> 适用于新部署，已部署项目可直接更新JS代码~~
 
 ## 📋 快速开始
 
 ### 1️⃣ 部署准备
-1. 创建Cloudflare Workers项目
+1. 创建Cloudflare Workers项目(建议名称：`KeyMS`)
 2. 创建KV命名空间（名称：`KMS_KV`）
 3. 绑定KV到Worker（变量名：`KMS_KV`）
 
@@ -55,6 +55,7 @@
 | `MASTER_KEY` | ✓ | `mySuperSecretKey123!` | 加密密钥的主密钥(32+字符) |
 | `USER` | ✓ | `admin` | 管理员用户名 |
 | `PASSWORD` | ✓ | `123456` | 管理员密码 |
+| ~~`AUTO_DEL`~~ | ~~✓~~ | ~~`true`~~ | ~~过期后是否自动删除~~ |~~
 
 ### 3️⃣ 定时任务设置
 在Cloudflare Workers控制台：
