@@ -792,7 +792,55 @@ async function handleRequest(request, env, ctx) {
 async function handleAPIRequest(request, env, ctx) {
   const url = new URL(request.url);
   const path = url.pathname;
-  
+
+  // 新增：单个密钥状态查询接口（无需token）
+  if (path === '/api/key/check' && request.method === 'POST') {
+    try {
+      const body = await request.json();
+      const { key } = body;
+      if (!key) {
+        return new Response(
+          JSON.stringify({ success: false, message: '缺少密钥' }),
+          { status: 400, headers: { 'Content-Type': 'application/json' } }
+        );
+      }
+      // 遍历所有密钥，找到匹配的原始密钥
+      const list = await env.KMS_KV.list();
+      let found = false;
+      let expired = true;
+      for (const kvKey of list.keys) {
+        const value = await env.KMS_KV.get(kvKey.name);
+        if (!value) continue;
+        const keyData = JSON.parse(value);
+        try {
+          const originKey = await _decryptKey(keyData.key, env);
+          if (originKey === key) {
+            found = true;
+            expired = new Date(keyData.expires) < new Date();
+            break;
+          }
+        } catch (e) {
+          // 解密失败跳过
+        }
+      }
+      if (!found) {
+        return new Response(
+          JSON.stringify({ success: false, message: '密钥不存在' }),
+          { status: 404, headers: { 'Content-Type': 'application/json' } }
+        );
+      }
+      return new Response(
+        JSON.stringify({ success: true, valid: !expired }),
+        { headers: { 'Content-Type': 'application/json' } }
+      );
+    } catch (e) {
+      return new Response(
+        JSON.stringify({ success: false, message: '查询失败: ' + e.message }),
+        { status: 500, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+  }
+
   // 登录API
   if (path === '/api/login' && request.method === 'POST') {
     const body = await request.json();
