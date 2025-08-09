@@ -1,16 +1,11 @@
 {
-	"name": "key-management-system",
-	"version": "0.0.0",
-	"private": true,
-	"scripts": {
-		"deploy": "wrangler deploy",
-		"dev": "wrangler dev",
-		"start": "wrangler dev",
-		"test": "vitest"
-	},
-	"devDependencies": {
-		"@cloudflare/vitest-pool-workers": "^0.8.19",
-		"vitest": "~3.2.0",
-		"wrangler": "^4.28.1"
-	}
+  "name": "key-management-system",
+  "version": "1.0.0",
+  "description": "密钥管理系统 - 基于CloudFlare Workers",
+  "main": "index.js",
+  "keywords": [
+    "cloudflare-workers",
+    "key-management-system"
+  ],
+  "license": "MIT"
 }
