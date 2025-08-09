@@ -2,6 +2,7 @@
 
 基于Cloudflare Workers的轻量级密钥管理系统，专为开发者设计的密钥管理解决方案。
 
+<img width="1556" height="949" alt="wechat_2025-08-09_155616_912" src="https://github.com/user-attachments/assets/5b7cdb82-002c-45da-89d9-58ea64f71d25" />
 
 
 ## ✨ 功能特色
@@ -46,6 +47,8 @@
 2. 创建KV命名空间（名称：`KMS_KV`）
 3. 绑定KV到Worker（变量名：`KMS_KV`）
 
+<img width="1243" height="627" alt="image" src="https://github.com/user-attachments/assets/c6553d96-8a0f-412e-bbfb-0df4817feed5" />
+
 ### 2️⃣ 环境变量配置
 | 变量名 | 必需 | 示例值 | 说明 |
 |--------|------|--------|------|
@@ -60,7 +63,7 @@
 
 ### 4️⃣ 系统访问
 1. 访问Worker部署地址
-2. 使用设置的用户名密码登录（默认：admin/123456）
+2. 使用设置的用户名密码登录
 3. 立即开始管理您的密钥
 
 ## 🔧 功能使用指南
