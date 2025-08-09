@@ -2,7 +2,7 @@
 
 基于Cloudflare Workers的轻量级密钥管理系统，专为开发者设计的密钥管理解决方案。
 
-<img width="1556" height="949" alt="wechat_2025-08-09_155616_912" src="https://github.com/user-attachments/assets/5b7cdb82-002c-45da-89d9-58ea64f71d25" />
+![img1](https://github.com/user-attachments/assets/5b7cdb82-002c-45da-89d9-58ea64f71d25)
 
 
 ## ✨ 功能特色
@@ -47,7 +47,7 @@
 2. 创建KV命名空间（名称：`KMS_KV`）
 3. 绑定KV到Worker（变量名：`KMS_KV`）
 
-<img width="1243" height="627" alt="image" src="https://github.com/user-attachments/assets/c6553d96-8a0f-412e-bbfb-0df4817feed5" />
+![img2](https://github.com/user-attachments/assets/c6553d96-8a0f-412e-bbfb-0df4817feed5)
 
 ### 2️⃣ 环境变量配置
 | 变量名 | 必需 | 示例值 | 说明 |
@@ -91,5 +91,6 @@
 ## 📜 许可证
 MIT License
 
-## ⭐ Star History
-[![Star History Chart](https://api.star-history.com/svg?repos=rento666/KeyManagementSystem&type=Date)](https://star-history.com/#rento666/KeyManagementSystem)
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=rento666/KeyManagementSystem&type=Date)](https://www.star-history.com/#rento666/KeyManagementSystem&Date)
