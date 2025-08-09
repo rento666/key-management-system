@@ -1,4 +1,5 @@
-name = "key-managerment-system"
+# wrangler.toml
+name = 'key-management-system'
 main = "index.js"
 compatibility_date = "2025-08-09"
 compatibility_flags = ["nodejs_compat"]
